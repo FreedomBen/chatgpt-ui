@@ -110,7 +110,28 @@ Currently, scenarios are set in `scenario.ex` and follow the `%ChatgptWeb.Scenar
 
 ## Usage
 
-Run with `mix phx.server`
+Quick development setup:
+
+First, install Elixir 1.14 or higher (1.13 or lower will not work).  Then:
+
+```bash
+# Clone the project
+git clone https://github.com/dvcrn/chatgpt-ui
+cd chatgpt-ui
+
+# Install Elixir
+mix deps.get
+
+# Install node dependencies
+yarn install      # or npm install
+mix assets.setup
+mix assets.build
+
+# Start the dev server
+export OPENAI_API_KEY=<api-key>
+export OPENAI_ORGANIZATION_KEY=<org-key>
+mix phx.server
+```
 
 ## Usage / Deploying with Docker
 
